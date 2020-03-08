@@ -16,7 +16,7 @@
 
 
     <!-- Run the map server -->
-    <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(find robot_launch)/example/horibe_home.yaml"/>
+    <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(find robot_launch)/example/horibe_home_res01.yaml"/>
 
     <!--- Run AMCL -->
     <include file="$(find robot_launch)/launch/amcl.launch" />
