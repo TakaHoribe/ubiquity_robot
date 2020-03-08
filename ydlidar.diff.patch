@@ -1,0 +1,26 @@
+diff --git a/launch/lidar.launch b/launch/lidar.launch
+index 6763ab6..4052c5f 100644
+--- a/launch/lidar.launch
++++ b/launch/lidar.launch
+@@ -16,5 +16,5 @@
+     <param name="frequency"    type="double" value="7"/>
+   </node>
+   <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser4"
+-    args="0.2245 0.0 0.2 0.0 0.0  0.0 /base_footprint /laser_frame 40" />
++    args="0.2245 0.0 0.2 3.141592 0.0 0.0 /base_footprint /laser_frame 40" />
+ </launch>
+diff --git a/src/ydlidar_node.cpp b/src/ydlidar_node.cpp
+index 0928258..fa001de 100644
+--- a/src/ydlidar_node.cpp
++++ b/src/ydlidar_node.cpp
+@@ -131,8 +131,8 @@ int main(int argc, char * argv[]) {
+             scan_msg.angle_min = scan.config.min_angle;
+             scan_msg.angle_max = scan.config.max_angle;
+             scan_msg.angle_increment = scan.config.ang_increment;
+-            scan_msg.scan_time = scan.config.scan_time;
+-            scan_msg.time_increment = scan.config.time_increment;
++            // scan_msg.scan_time = scan.config.scan_time;
++            // scan_msg.time_increment = scan.config.time_increment;
+             scan_msg.range_min = scan.config.min_range;
+             scan_msg.range_max = scan.config.max_range;
+             

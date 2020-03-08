@@ -1,0 +1,15 @@
+<launch>
+
+    <!-- roomba driver -->
+    <include file="$(find ca_driver)/launch/create_2.launch">
+        <arg name="config" value="$(find ca_driver)/config/roomba.yaml" />
+    </include>
+
+    <!-- lidar driver -->
+    <include file="$(find ydlidar)/launch/lidar.launch" />
+
+    <!-- <node pkg="transform_configuration_pkg" type="transform_configuration_type" name="transform_configuration_name" output="screen">
+        <param name="transform_configuration_param" value="param_value" />
+    </node> -->
+
+</launch>

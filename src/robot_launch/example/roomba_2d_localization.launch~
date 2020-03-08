@@ -1,0 +1,10 @@
+<launch>
+
+    <include file="$(find roomba_2dnav)/launch/amcl.launch" />
+
+
+    <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(find roomba_2dnav)/example/first.map.yaml"/>
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find roomba_2dnav)/example/roomba.rviz" />
+
+</launch>
